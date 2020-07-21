@@ -1,4 +1,8 @@
-import { Router, Link, navigate } from "./router";
+import { Router, Link, navigate } from "../lib/router";
+
+const About = () => import('./about')
+
+const wait = (amount = 0) => new Promise(resolve => setTimeout(resolve, amount));
 
 const routes = {
   "/": Index,
@@ -18,25 +22,6 @@ function Index() {
   return wrapper;
 }
 
-function About() {
-  const header = document.createElement("h1");
-  header.textContent = "About Page";
-
-  const homeLink = Link("/", "go to home");
-  const homeBtn = document.createElement("button");
-  homeBtn.textContent = "go home with navigate";
-  homeBtn.addEventListener("click", function () {
-    navigate("/");
-  });
-
-  const wrapper = document.createRange().createContextualFragment("");
-  wrapper.appendChild(header);
-  wrapper.appendChild(homeLink);
-  wrapper.appendChild(homeBtn);
-
-  return wrapper;
-}
-
 function ErrorPage() {
   const header = document.createElement("h1");
   header.textContent = "Error Page";
@@ -52,9 +37,21 @@ function ErrorPage() {
   return wrapper;
 }
 
+function LoadingPage() {
+  const header = document.createElement("h1");
+  header.textContent = "Loading Page";
+
+
+  const wrapper = document.createRange().createContextualFragment("");
+  wrapper.appendChild(header);
+
+  return wrapper;
+}
+
 Router({
   container: app,
   onRouteChange: (from, to) => console.log(`from route ${from} to route ${to}`),
   routes,
-  fallback: ErrorPage
+  ErrorFallback: ErrorPage,
+  LoadingFallback: LoadingPage
 });

@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "A small router that works with a simple state machine",
   "main": "dist/bundle.js",
+  "private": "true",
   "scripts": {
     "webpack": "webpack",
     "webpack-dev-server": "webpack-dev-server",

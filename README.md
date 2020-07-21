@@ -17,7 +17,8 @@ import { Router, Link, navigation } from 'the-router'
 ```js
 Router({
   routes,
-  fallback,
+  ErrorFallback,
+  LoadingFallback,
   onRouteChange,
   container
 })
@@ -48,10 +49,26 @@ function About() {
 }
 ```
 
-##### fallback (option)
+##### ErrorFallback (optional)
 
 This is the fallback page that will be rendered in case of a 404, just like the other
 paths this needs to be a function returning a HTMLElement
+
+##### LoadingFallback (optional)
+
+This is the fallback page that will be rendered in case you are using code splitting or async functions are being
+handed to the router
+
+* For code splitting on webpack: 
+    
+```js
+  const About = () => import('./pages/about')
+
+  let routes = {
+    ...
+    '/about': About
+  }
+```
 
 ##### onRouteChange (optional)
 

@@ -1,3 +1,1 @@
-module.exports = env => ({
-  entry: './src/router.js'
-})
+module.exports = env => ({})
