@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "description": "A small router that works with a simple state machine",
   "main": "src/index.js",
-  "private": "false",
   "scripts": {
     "webpack": "webpack",
     "webpack-dev-server": "webpack-dev-server",
