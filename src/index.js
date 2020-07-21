@@ -1,8 +1,9 @@
 import { Router, Link, navigate } from "../lib/router";
 
-const About = () => import('./about')
+const About = () => import("./about");
 
-const wait = (amount = 0) => new Promise(resolve => setTimeout(resolve, amount));
+const wait = (amount = 0) =>
+  new Promise((resolve) => setTimeout(resolve, amount));
 
 const routes = {
   "/": Index,
@@ -41,7 +42,6 @@ function LoadingPage() {
   const header = document.createElement("h1");
   header.textContent = "Loading Page";
 
-
   const wrapper = document.createRange().createContextualFragment("");
   wrapper.appendChild(header);
 
@@ -53,5 +53,5 @@ Router({
   onRouteChange: (from, to) => console.log(`from route ${from} to route ${to}`),
   routes,
   ErrorFallback: ErrorPage,
-  LoadingFallback: LoadingPage
+  LoadingFallback: LoadingPage,
 });

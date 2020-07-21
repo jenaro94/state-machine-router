@@ -1,4 +1,4 @@
-import { Link, navigate } from '../lib/router'
+import { Link, navigate } from "../lib/router";
 
 function About() {
   const header = document.createElement("h1");
@@ -19,4 +19,4 @@ function About() {
   return wrapper;
 }
 
-export default About
+export default About;

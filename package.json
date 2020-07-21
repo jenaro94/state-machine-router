@@ -2,7 +2,7 @@
   "name": "state-machine-router",
   "version": "0.0.1",
   "description": "A small router that works with a simple state machine",
-  "main": "dist/bundle.js",
+  "main": "src/index.js",
   "private": "true",
   "scripts": {
     "webpack": "webpack",
@@ -14,6 +14,9 @@
   },
   "author": "@jenaroc",
   "license": "ISC",
+  "files": [
+    "lib/*"
+  ],
   "devDependencies": {
     "html-webpack-plugin": "^4.3.0",
     "webpack": "^4.43.0",
